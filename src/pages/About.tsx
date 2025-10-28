@@ -62,19 +62,6 @@ const experiences = [
       "Elevated page loading time 10x faster by identifying and addressing performance bottlenecks.",
     ],
   },
-  {
-    company: "Qburst Technologies",
-    role: "Software Engineer",
-    period: "April 2021 - Aug 2022",
-    location: "Trivandrum",
-    description:
-      "Qburst is a product and development company with offices in the US, UK, UAE, and India.",
-    achievements: [
-      "Delivered high-quality, robust production code for diverse array of projects",
-      "Collaborated with agile development teams in US, UAE, UK and India",
-      "Developed reusable components that reduced development time by 30%",
-    ],
-  },
 ];
 
 const featuredProjects = [
