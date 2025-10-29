@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Rocket, Zap } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const skills = [
   "Next.js",
@@ -236,16 +237,33 @@ const About = () => {
                     style={{ animationDuration: "5s", animationDelay: "2s" }}
                   />
 
-                  {/* Center Circle */}
-                  <div className="absolute text-8xl inset-20 rounded-full bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-xl border border-primary/30 flex items-center justify-center shadow-2xl">
-                    👨‍💻
+                  {/* Modern particle system */}
+                  <div className="absolute inset-20 rounded-2xl  flex items-center justify-center  overflow-hidden">
+                    {/* Animated connection lines */}
+                    {[...Array(8)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-2 h-2 rounded-full bg-primary/60"
+                        animate={{
+                          x: [0, Math.cos(i * 45) * 100, 0],
+                          y: [0, Math.sin(i * 45) * 100, 0],
+                          scale: [1, 1.5, 1],
+                          opacity: [0.3, 1, 0.3],
+                        }}
+                        transition={{
+                          duration: 4,
+                          repeat: Infinity,
+                          delay: i * 0.5,
+                        }}
+                      />
+                    ))}
                   </div>
 
                   {/* Floating Icons */}
                   <motion.div
                     animate={{ y: [-10, 10, -10] }}
                     transition={{ duration: 3, repeat: Infinity }}
-                    className="absolute -top-4 right-1/4 w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shadow-lg"
+                    className="absolute top-8 right-1/4 w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shadow-lg"
                   >
                     <Code2 className="w-8 h-8 text-white" />
                   </motion.div>
@@ -391,6 +409,8 @@ const About = () => {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 };
