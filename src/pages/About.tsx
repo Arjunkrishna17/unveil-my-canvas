@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { GridBackground } from "@/components/GridBackground";
@@ -6,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Rocket, Zap } from "lucide-react";
+import { ArrowRight, Code2, Rocket, Download } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
 const skills = [
@@ -121,6 +123,25 @@ const featuredProjects = [
 ];
 
 const About = () => {
+  const navigate = useNavigate();
+  const projectsRef = useRef<HTMLElement>(null);
+  const experienceRef = useRef<HTMLElement>(null);
+
+  // Smooth scroll function with offset for fixed navigation
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    if (ref.current) {
+      const headerOffset = 100;
+      const elementPosition = ref.current.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       <GridBackground />
@@ -146,7 +167,7 @@ const About = () => {
                     className="inline-block"
                   >
                     <Badge className="px-4 py-2 text-sm bg-primary/10 border-primary/30 text-primary">
-                      <Zap className="w-4 h-4 mr-2" />
+                      <Download className="w-4 h-4 mr-2" />
                       Available for opportunities
                     </Badge>
                   </motion.div>
@@ -163,14 +184,15 @@ const About = () => {
                   <span className="text-foreground font-bold">
                     Krishnadas R
                   </span>
-                  , a Software Engineer crafting exceptional web experiences
-                  with cutting-edge technologies, DevOps excellence, and AI
-                  integration.
+                  , a Fullstack Software Engineer crafting exceptional web
+                  experiences with cutting-edge technologies, DevOps excellence,
+                  and AI integration.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
                   <Button
                     size="lg"
+                    onClick={() => scrollToSection(projectsRef)}
                     className="group bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 transition-all"
                   >
                     View Projects
@@ -179,6 +201,7 @@ const About = () => {
                   <Button
                     size="lg"
                     variant="outline"
+                    onClick={() => scrollToSection(experienceRef)}
                     className="border-primary/30 hover:bg-primary/10"
                   >
                     <Code2 className="mr-2 w-4 h-4" />
@@ -215,7 +238,7 @@ const About = () => {
                 </div>
               </motion.div>
 
-              {/* Right Visual */}
+              {/* Right Visual - Professional Particle Animation */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -238,25 +261,40 @@ const About = () => {
                   />
 
                   {/* Modern particle system */}
-                  <div className="absolute inset-20 rounded-2xl  flex items-center justify-center  overflow-hidden">
-                    {/* Animated connection lines */}
+                  <div className="absolute inset-20 rounded-2xl flex items-center justify-center overflow-hidden">
+                    {/* Animated connection particles */}
                     {[...Array(8)].map((_, i) => (
                       <motion.div
                         key={i}
-                        className="absolute w-2 h-2 rounded-full bg-primary/60"
+                        className="absolute w-3 h-3 rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/50"
                         animate={{
-                          x: [0, Math.cos(i * 45) * 100, 0],
-                          y: [0, Math.sin(i * 45) * 100, 0],
+                          x: [0, Math.cos((i * 45 * Math.PI) / 180) * 100, 0],
+                          y: [0, Math.sin((i * 45 * Math.PI) / 180) * 100, 0],
                           scale: [1, 1.5, 1],
-                          opacity: [0.3, 1, 0.3],
+                          opacity: [0.4, 1, 0.4],
                         }}
                         transition={{
                           duration: 4,
                           repeat: Infinity,
                           delay: i * 0.5,
+                          ease: "easeInOut",
                         }}
                       />
                     ))}
+
+                    {/* Center glow */}
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.3, 0.6, 0.3],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 blur-xl"
+                    />
                   </div>
 
                   {/* Floating Icons */}
@@ -282,7 +320,7 @@ const About = () => {
         </section>
 
         {/* Featured Projects Section */}
-        <section className="py-32">
+        <section ref={projectsRef} className="py-32 scroll-mt-20">
           <ScrollReveal>
             <div className="text-center mb-16 space-y-4">
               <Badge className="px-4 py-2 bg-secondary/10 border-secondary/30 text-secondary">
@@ -309,10 +347,11 @@ const About = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary/30 hover:bg-primary/10"
+                onClick={() => navigate("/projects")}
+                className="border-primary/30 hover:bg-primary/10 group"
               >
                 View All Projects
-                <ArrowRight className="ml-2 w-4 h-4" />
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </ScrollReveal>
@@ -352,7 +391,7 @@ const About = () => {
         </section>
 
         {/* Experience Section */}
-        <section className="py-32">
+        <section ref={experienceRef} className="py-32 scroll-mt-20">
           <ScrollReveal>
             <div className="text-center mb-16 space-y-4">
               <Badge className="px-4 py-2 bg-primary/10 border-primary/30 text-primary">
