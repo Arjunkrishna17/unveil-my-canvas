@@ -8,11 +8,34 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Rocket, Download } from "lucide-react";
+import {
+  ArrowRight,
+  Code2,
+  Rocket,
+  Download,
+  Briefcase,
+  Building2,
+  CheckCircle2,
+  CalendarRange,
+  Zap,
+  MapPin,
+  Heart,
+  Presentation,
+  Users,
+  GraduationCap,
+  Compass,
+  BookOpen,
+  Swords,
+  Music,
+  BikeIcon,
+  Footprints,
+  Bike,
+} from "lucide-react";
 import { Footer } from "@/components/Footer";
 
 const skills = [
   "Next.js",
+  "Vite",
   "React",
   "Tailwind CSS",
   "JavaScript",
@@ -20,6 +43,11 @@ const skills = [
   "Redux",
   "Jest",
   "Material UI",
+  "Ant Designs",
+  "Apex Charts",
+  "AI Integrations",
+  "Google Map",
+  "Map My India Api's",
   "HTML",
   "CSS",
   "Figma",
@@ -31,7 +59,7 @@ const skills = [
   "AWS",
   "Docker",
   "GitHub Actions",
-  "ChatGPT API",
+  "Payment Gateways",
   "Git",
   "GitHub",
   "Bitbucket",
@@ -44,42 +72,55 @@ const experiences = [
     company: "Zino Technologies",
     role: "Software Development Engineer",
     period: "April 2024 - Present",
-    location: "Bangalore",
-    description: "Zino is a low code Software development platform.",
+    location: "Bengaluru, India",
+    description:
+      "Zino is a low-code development platform that enables users to build, configure, and deploy applications visually. I work on the core renderer engine and internal tools that power the platform’s runtime and visual development experience.",
     achievements: [
-      "Reduced app development time by 50% by creating a live app editor, the Hybrid Editor.",
-      "Optimized chat application performance using FCM notification service",
-      "Mentored and trained 5+ interns",
+      "Developed and integrated a logistics analysis tool with Google Maps and Digipins, introducing freight and price visualization that enabled users to identify 30% more anomalies in data patterns.",
+      "Implemented a GPU-accelerated layer for Google Map digipin rendering, improving performance for 70,000+ plotted points and reducing DOM manipulation overhead.",
+      "Built a low-code Figma engine that converts design files into platform-compatible pages, reducing design-to-development handoff time and accelerating prototyping.",
+      "Implemented a micro-frontend bridge between the logistics tool and the renderer engine, making both systems modular and configurable.",
+      "Created a height optimization algorithm that reduced layout shifts by 30% and brought Cumulative Layout Shift (CLS) below 0.1.",
+      "Developed a runtime React component system for dynamic feature loading and real-time experimentation, cutting development cycle time to under 1 hour.",
+      "Built a low-code chart editor that enabled non-developers to configure visualizations independently, reducing chart development time by 70%.",
+      "Implemented a visual job and database flow editor using React Flow, improving system transparency and reducing production bugs by 35%.",
+      "Created a step form builder with dynamic state-driven navigation, enhancing UX and reducing form delivery time.",
+      "Optimized app performance through lazy loading and asset tuning, improving First Contentful Paint (FCP) by 50%.",
+      "Mentored and trained 5+ interns, guiding them through feature implementation, performance optimization, and production deployment.",
     ],
   },
   {
-    company: "Axon.ai",
-    role: "Software Development Engineer",
-    period: "Aug 2022 - April 2024",
-    location: "Bangalore",
-    description: "Axon is a SaaS Product for engineering analytics.",
+    company: "Praximax Technology",
+    role: "Founding Engineer",
+    period: "August 2022 - March 2024",
+    location: "Bengaluru, India",
+    description:
+      "Early engineering member contributing to the end-to-end development of Praximax’s workflow analytics and team productivity platform. Focused on improving system scalability, UI consistency, and operational efficiency across the product.",
     achievements: [
-      "Engineered an intelligent Engineering Dashboard, enabling engineering leaders to quickly identify and address performance bottlenecks.",
-      "Designed, developed, and deployed an OKR dashboard that empowers organizations to set and track objectives.",
-      "Implemented a background service to automatically detect and send insights about engineering metrics.",
-      "Elevated page loading time 10x faster by identifying and addressing performance bottlenecks.",
+      "Designed and built an analytics UI that improved workflow visibility and user understanding by 100%.",
+      "Standardized 60+ reusable components across the design system, saving over 400 hours of cumulative development time.",
+      "Developed and maintained CI/CD pipelines, reducing deployment time to under 2 minutes and improving release reliability.",
+      "Automated periodic insight generation using AWS EventBridge and SQS for continuous data refresh and monitoring.",
+      "Led market and competitive analysis for new features, including OKRs, team management, KPI tracking, blocked work insights, and notifications.",
+      "Maintained 92% on-time delivery rate and achieved a 1% change failure rate across 2200+ production pull requests.",
     ],
   },
 ];
 
 const featuredProjects = [
   {
-    title: "Zino Hybrid Editor",
+    title: "Zino Low-Code Platform",
     description:
-      "Revolutionary low-code platform that reduced app development time by 50%. Features drag-and-drop functionality, AI-supported page creation, and real-time collaboration tools.",
+      "A full-stack low-code platform that enables teams to visually build, configure, and deploy web applications. I worked on the renderer engine responsible for translating user-built configurations into functional, interactive pages. The platform supports AI-generated layouts, visual theme editing, and component-level customization, helping developers prototype and iterate faster while maintaining consistency across the app.",
     features:
-      "Creating pages, permissions management, theme customization, drag-and-drop, charts integration, AI page creation",
+      "Renderer engine, component configuration, theme customization, permission and access control, chart integration, drag-and-drop page creation, AI layout generation, real-time collaboration",
     tech: [
       "React",
-      "TypeScript",
-      "Node.js",
-      "Real-time Sync",
+      "Redux",
+      "Go",
+      "PostgreSQL",
       "AI Integration",
+      "ApexCharts",
     ],
     link: "https://getzino.com/",
     gradient: "from-cyan-500 via-blue-500 to-purple-500",
@@ -103,22 +144,41 @@ const featuredProjects = [
     gradient: "from-purple-500 via-pink-500 to-orange-500",
   },
   {
-    title: "Axon OKR Dashboard",
+    title: "Shelfbook",
     description:
-      "Goal-setting framework dashboard with Jira integration for automatic progress tracking. Supports public/private OKRs with role-based permissions.",
+      "AI-powered note-taking and productivity platform that combines intelligent organization, task management, and knowledge mapping. Designed to help users capture ideas, manage projects, and connect insights using AI assistance and semantic search.",
     features:
-      "OKR CRUD, Public/Private OKRs, Auto progress tracking, Insights generation, Jira integration",
-    tech: ["React", "TypeScript", "Tailwind", "Express", "MongoDB", "Jira API"],
-    link: "https://www.getaxon.io/",
-    gradient: "from-orange-500 via-red-500 to-pink-500",
+      "AI chat assistant for summarization and insights, smart organization with shelves and pages, semantic search, integrated task and calendar system, mind mapping and chart creation, document reader with highlights, cross-device synchronization, and Google OAuth for secure access",
+    tech: [
+      "React.js",
+      "Tailwind CSS",
+      "Python",
+      "MongoDB",
+      "AWS",
+      "Google OAuth",
+    ],
+    link: "https://shelfbook.site/",
+    gradient: "from-amber-500 via-pink-500 to-violet-500",
   },
   {
-    title: "Axon Developer Activity",
+    title: "Task Manager",
     description:
-      "Individual contribution analytics providing insights into code commits, project involvement, and collaboration patterns.",
-    tech: ["Next.js", "React", "TypeScript", "Node.js", "MongoDB"],
-    link: "https://www.getaxon.io/pricing",
-    gradient: "from-green-500 via-teal-500 to-cyan-500",
+      "Task management application built to streamline daily workflows and improve productivity. Designed for individuals and teams to create, categorize, and track tasks efficiently with real-time updates and progress monitoring.",
+    features:
+      "Task creation and categorization, priority management, progress tracking, team collaboration, user authentication, cloud deployment, and automated CI/CD pipeline using GitHub Actions and Docker",
+    tech: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "AWS",
+      "Docker",
+      "GitHub Actions",
+    ],
+    link: "",
+    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
   },
 ];
 
@@ -126,6 +186,7 @@ const About = () => {
   const navigate = useNavigate();
   const projectsRef = useRef<HTMLElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
+  const interestsRef = useRef<HTMLElement>(null);
 
   // Smooth scroll function with offset for fixed navigation
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
@@ -403,48 +464,322 @@ const About = () => {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-8 relative max-w-5xl mx-auto">
-            {/* Timeline Line */}
-            <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent" />
-
+          <div className="max-w-6xl mx-auto space-y-16">
             {experiences.map((exp, index) => (
               <ScrollReveal key={exp.company} delay={index * 0.15}>
-                <Card className="glass-panel p-8 hover-lift ml-0 lg:ml-20 relative border-0">
-                  {/* Timeline Dot */}
-                  <div className="hidden lg:block absolute -left-12 top-10 w-6 h-6 rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/50" />
+                <div
+                  className={`flex flex-col lg:flex-row gap-8 items-center ${
+                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* Icon side */}
+                  <div className="lg:w-1/3 flex justify-center">
+                    <motion.div
+                      whileHover={{ scale: 1.05, rotate: 5 }}
+                      className="relative"
+                    >
+                      <div className="w-48 h-48 rounded-3xl bg-gradient-to-br from-primary via-secondary to-accent p-1">
+                        <div className="w-full h-full rounded-3xl bg-background flex items-center justify-center">
+                          <div className="text-center space-y-3">
+                            <div className="text-5xl font-bold text-gradient-primary">
+                              {String(index + 1).padStart(2, "0")}
+                            </div>
+                            <div className="text-sm font-medium text-muted-foreground">
+                              {exp.period.split(" - ")[0]}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-                  <div className="space-y-6">
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                      <div className="space-y-2">
+                      {/* Connecting line */}
+                      {index < experiences.length - 1 && (
+                        <div
+                          className={`hidden lg:block absolute top-full left-1/2 w-0.5 h-16 bg-gradient-to-b from-primary to-transparent ${
+                            index % 2 === 1
+                              ? "-translate-x-full"
+                              : "translate-x-0"
+                          }`}
+                        />
+                      )}
+                    </motion.div>
+                  </div>
+
+                  {/* Content side */}
+                  <Card className="lg:w-2/3 glass-panel p-8 border-0 hover-lift">
+                    <div className="space-y-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <Briefcase className="w-5 h-5 text-primary" />
+                          <span className="text-sm font-medium text-primary">
+                            {exp.period}
+                          </span>
+                        </div>
+
                         <h3 className="text-3xl font-bold text-foreground">
                           {exp.role}
                         </h3>
-                        <p className="text-xl text-gradient-primary font-semibold">
-                          {exp.company}
-                        </p>
+
+                        <div className="flex items-center gap-2 text-lg">
+                          <Building2 className="w-5 h-5 text-secondary" />
+                          <span className="font-semibold text-secondary">
+                            {exp.company}
+                          </span>
+                          <span className="text-muted-foreground">•</span>
+                          <MapPin className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">
+                            {exp.location}
+                          </span>
+                        </div>
                       </div>
-                      <div className="text-muted-foreground">
-                        <p className="font-medium">{exp.period}</p>
-                        <p>{exp.location}</p>
+
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        {exp.description}
+                      </p>
+
+                      <div className="grid gap-3 pt-4">
+                        {exp.achievements.map((achievement, i) => (
+                          <div
+                            key={i}
+                            className="flex gap-3 items-start p-3 rounded-lg bg-primary/5 hover:bg-primary/10 transition-colors"
+                          >
+                            <Zap className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-foreground/90">
+                              {achievement}
+                            </span>
+                          </div>
+                        ))}
                       </div>
                     </div>
-
-                    <p className="text-lg text-muted-foreground">
-                      {exp.description}
-                    </p>
-
-                    <ul className="space-y-3">
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="flex gap-4 text-foreground/90">
-                          <span className="text-primary text-xl mt-0.5">▹</span>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Card>
+                  </Card>
+                </div>
               </ScrollReveal>
             ))}
+          </div>
+        </section>
+
+        {/* Interests & Activities Section */}
+        {/* Interests & Activities Section - Masonry Grid */}
+        <section ref={interestsRef} className="py-32 scroll-mt-20">
+          <ScrollReveal>
+            <div className="text-center mb-16 space-y-4">
+              <Badge className="px-4 py-2 bg-accent/10 border-accent/30 text-accent">
+                Beyond Code
+              </Badge>
+              <h2 className="text-5xl lg:text-6xl font-bold">
+                Interests &{" "}
+                <span className="text-gradient-accent">Activities</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Exploring passions beyond the keyboard
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="max-w-7xl mx-auto">
+            {/* Masonry Grid - 3 Columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Column 1 */}
+              <div className="flex flex-col gap-6">
+                {/* Cycle Rider */}
+                <ScrollReveal delay={0.1}>
+                  <Card className="glass-panel border-0 overflow-hidden group hover-lift">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center flex-shrink-0">
+                          <Bike className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground">
+                          Cycle Rider
+                        </h3>
+                      </div>
+                      <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                        <img
+                          src="./public/cycleGrid.png"
+                          alt="Cycling"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+
+                {/* Jazz Player */}
+                <ScrollReveal delay={0.4}>
+                  <Card className="glass-panel border-0 overflow-hidden group hover-lift">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                          <Music className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground">
+                          Jazz Player
+                        </h3>
+                      </div>
+                      <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                        <img
+                          src="./public/Drums.jpg"
+                          alt="Playing drums"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+
+                {/* Reader */}
+                <ScrollReveal delay={0.7}>
+                  <Card className="glass-panel border-0 overflow-hidden group hover-lift">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center flex-shrink-0">
+                          <BookOpen className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground">
+                          Reader
+                        </h3>
+                      </div>
+                      <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                        <img
+                          src="./public/bookShelf.jpeg"
+                          alt="Reading books"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+              </div>
+
+              {/* Column 2 - Marathon (Tall) */}
+              <div className="flex flex-col gap-6">
+                {/* Marathon Runner - Tall Card */}
+                <ScrollReveal delay={0.2}>
+                  <Card className="glass-panel border-0 overflow-hidden group hover-lift">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0">
+                          <Footprints className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground">
+                          Marathon Runner
+                        </h3>
+                      </div>
+                      <div className="flex flex-col gap-4">
+                        <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                          <img
+                            src="./public/marathonWeb.png"
+                            alt="Marathon"
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                        <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                          <img
+                            src="./public/marathonCert.png"
+                            alt="Marathon Certificate"
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+
+                {/* Karate */}
+                <ScrollReveal delay={0.5}>
+                  <Card className="glass-panel border-0 overflow-hidden group hover-lift">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center flex-shrink-0">
+                          <Swords className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground">
+                          Karate
+                        </h3>
+                      </div>
+                      <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                        <img
+                          src="./public/karataPhoto.webp"
+                          alt="Karate practice"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+              </div>
+
+              {/* Column 3 */}
+              <div className="flex flex-col gap-6">
+                {/* Bike Rider */}
+                <ScrollReveal delay={0.3}>
+                  <Card className="glass-panel border-0 overflow-hidden group hover-lift">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                          <BikeIcon className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground">
+                          Bike Rider
+                        </h3>
+                      </div>
+                      <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                        <img
+                          src="./public/Ride.jpg"
+                          alt="Bike riding"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+
+                {/* Social Activities */}
+                <ScrollReveal delay={0.6}>
+                  <Card className="glass-panel border-0 overflow-hidden group hover-lift">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                          <Users className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground">
+                          Social Activities
+                        </h3>
+                      </div>
+                      <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                        <img
+                          src="./public/social.png"
+                          alt="Social activities"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+
+                {/* Explorer */}
+                <ScrollReveal delay={0.8}>
+                  <Card className="glass-panel border-0 overflow-hidden group hover-lift">
+                    <div className="p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center flex-shrink-0">
+                          <Compass className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground">
+                          Explorer
+                        </h3>
+                      </div>
+                      <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
+                        <img
+                          src="./public/explorer.png"
+                          alt="Exploring places"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+              </div>
+            </div>
           </div>
         </section>
       </main>
