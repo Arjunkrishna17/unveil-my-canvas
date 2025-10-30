@@ -15,14 +15,9 @@ import {
   Download,
   Briefcase,
   Building2,
-  CheckCircle2,
-  CalendarRange,
   Zap,
   MapPin,
-  Heart,
-  Presentation,
   Users,
-  GraduationCap,
   Compass,
   BookOpen,
   Swords,
@@ -304,7 +299,7 @@ const About = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="relative"
+                className="relative hidden md:flex"
               >
                 <div className="relative w-full aspect-square">
                   {/* Animated Rings */}
@@ -557,7 +552,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Interests & Activities Section */}
         {/* Interests & Activities Section - Masonry Grid */}
         <section ref={interestsRef} className="py-32 scroll-mt-20">
           <ScrollReveal>
