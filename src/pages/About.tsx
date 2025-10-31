@@ -588,7 +588,7 @@ const About = () => {
                       </div>
                       <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                         <img
-                          src="./public/cycleGrid.png"
+                          src="/cycleGrid.png"
                           alt="Cycling"
                           className="w-full h-auto object-contain"
                         />
@@ -611,7 +611,7 @@ const About = () => {
                       </div>
                       <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                         <img
-                          src="./public/Drums.jpg"
+                          src="/Drums.jpg"
                           alt="Playing drums"
                           className="w-full h-auto object-contain"
                         />
@@ -634,7 +634,7 @@ const About = () => {
                       </div>
                       <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                         <img
-                          src="./public/bookShelf.jpeg"
+                          src="/bookShelf.jpeg"
                           alt="Reading books"
                           className="w-full h-auto object-contain"
                         />
@@ -661,14 +661,14 @@ const About = () => {
                       <div className="flex flex-col gap-4">
                         <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                           <img
-                            src="./public/marathonWeb.png"
+                            src="/marathonWeb.png"
                             alt="Marathon"
                             className="w-full h-auto object-contain"
                           />
                         </div>
                         <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                           <img
-                            src="./public/marathonCert.png"
+                            src="/marathonCert.png"
                             alt="Marathon Certificate"
                             className="w-full h-auto object-contain"
                           />
@@ -692,7 +692,7 @@ const About = () => {
                       </div>
                       <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                         <img
-                          src="./public/karataPhoto.webp"
+                          src="/karataPhoto.webp"
                           alt="Karate practice"
                           className="w-full h-auto object-contain"
                         />
@@ -718,7 +718,7 @@ const About = () => {
                       </div>
                       <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                         <img
-                          src="./public/Ride.jpg"
+                          src="/Ride.jpg"
                           alt="Bike riding"
                           className="w-full h-auto object-contain"
                         />
@@ -741,7 +741,7 @@ const About = () => {
                       </div>
                       <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                         <img
-                          src="./public/social.png"
+                          src="/social.png"
                           alt="Social activities"
                           className="w-full h-auto object-contain"
                         />
@@ -764,7 +764,7 @@ const About = () => {
                       </div>
                       <div className="w-full bg-secondary/5 rounded-xl flex items-center justify-center p-6">
                         <img
-                          src="./public/explorer.png"
+                          src="/explorer.png"
                           alt="Exploring places"
                           className="w-full h-auto object-contain"
                         />
