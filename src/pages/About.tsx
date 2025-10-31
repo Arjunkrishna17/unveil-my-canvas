@@ -172,7 +172,7 @@ const featuredProjects = [
       "Docker",
       "GitHub Actions",
     ],
-    link: "",
+    link: "https://task-manager.krishnadas.online",
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
   },
 ];
