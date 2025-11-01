@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Rocket } from "lucide-react";
 import { companyProjects, personalProjects } from "@/Data/data";
+import { Footer } from "@/components/Footer";
 
 const Projects = () => {
   return (
@@ -127,6 +128,7 @@ const Projects = () => {
           </div>
         </motion.section>
       </main>
+      <Footer />
     </div>
   );
 };
